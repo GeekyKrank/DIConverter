@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <EnableDefaultPageItems>false</EnableDefaultPageItems>
+    <StartupObject>DesktopGlassProgram</StartupObject>
+    <AssemblyName>DIConverter</AssemblyName>
+    <Version>1.0.0</Version>
+    <Product>DIConverter</Product>
+    <Description>YouTube and SoundCloud media downloader</Description>
+    <ApplicationIcon>../Assets/DIConverter.ico</ApplicationIcon>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="XamlTemplates.FX.Wpf" Version="1.0.0-preview.5" GeneratePathProperty="true" />
+    <Compile Include="../DesktopGlass.cs" Link="DesktopGlass.cs" />
+    <Compile Include="../MediaUrl.cs" Link="MediaUrl.cs" />
+    <Compile Include="../LiquidHighlights.cs" Link="LiquidHighlights.cs" />
+    <Compile Include="GpuBackdrop.cs" />
+    <Compile Include="FrameSynchronizedDrag.cs" />
+    <Compile Include="GlassButtonChrome.cs" />
+    <Compile Include="MotionTestScene.cs" />
+    <Compile Include="RecordableBackdropSource.cs" />
+    <Content Include="Shaders/LiquidControls.glsl" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <EmbeddedResource Include="../GlassWindow.xaml" LogicalName="GlassWindow.xaml" />
+    <Resource Include="../Assets/DIConverter-logo.png" Link="Assets/DIConverter-logo.png" />
+    <Resource Include="../Assets/DIConverter.ico" Link="Assets/DIConverter.ico" />
+    <Resource Include="../Assets/Fonts/SpecialGothicExpandedOne-Regular.ttf" Link="Assets/Fonts/SpecialGothicExpandedOne-Regular.ttf" />
+    <Content Include="../Assets/Fonts/SpecialGothicExpandedOne-OFL.txt" Link="Assets/Fonts/SpecialGothicExpandedOne-OFL.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="../tools/yt-dlp.exe" Link="tools/yt-dlp.exe" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="../tools/ffmpeg.exe" Link="tools/ffmpeg.exe" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="../tools/ffprobe.exe" Link="tools/ffprobe.exe" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="../tools/ffmpeg-LICENSE.txt" Link="licenses/ffmpeg-LICENSE.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="$(PkgXamlTemplates_FX_Wpf)/LICENSE-BINARY.md" Link="licenses/XamlTemplates-FX.md" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="$(PkgXamlTemplates_FX_Wpf)/third-party/*" Link="licenses/renderer/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="$(PkgXamlTemplates_FX_Wpf)/runtimes/win-x64/native/shaders/*.cso" Link="shaders/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

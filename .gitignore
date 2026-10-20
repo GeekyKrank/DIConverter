@@ -1,0 +1,15 @@
+/tools/
+/DIConverterApp/
+/SoundCloud*/
+/dist/
+**/bin/
+**/obj/
+*.exe
+*.dll
+*.pdb
+*.zip
+*-preview.png
+*-check.txt
+/preview.png
+.vs/
+.idea/
